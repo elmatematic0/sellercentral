@@ -1,0 +1,39 @@
+<h1>Please Sign Up</h1>
+
+
+
+<%= form_for @user do |u| %>
+ <% if @user.errors.any? %>
+    
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+  <% end %>
+<p>
+<%= u.label :name %>
+<%= u.text_field :name %>
+</p>
+<p>
+<%= u.label :email %>
+<%= u.email_field :email %>
+</p>
+<p>
+<%= u.label :password %>
+<%= u.password_field :password %>
+</p>
+<p>
+<%= u.label :telephone %>
+<%= u.telephone_field :telephone %>
+</p>
+<p>
+<%= u.submit %>
+
+</p>
+<% end %>
+
+
+
+
